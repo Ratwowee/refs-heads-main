@@ -3004,7 +3004,7 @@ local Window = OrionLib:MakeWindow({
     SaveConfig = true,
     IntroEnabled = true,
     IntroText = "Gayass script by Ratwowee",
-    IntroIcon = "rbxassetid://16602754611", -- tu peux changer l'asset ID si tu veux un autre logo
+    IntroIcon = "rbxassetid://7734058345", -- tu peux changer l'asset ID si tu veux un autre logo
     ConfigFolder = "PWNLoader"
 })
 
@@ -3015,6 +3015,86 @@ PremiumOnly = false
 })
 
 Tab:AddLabel("CREATOR: ratwowee")
+
+
+
+
+
+
+
+
+-- Créer l'onglet Players Menu
+local PlayerMenuTab = Window:MakeTab({
+Name = "Player Menu",
+	Icon = "rbxassetid://15942473133",
+    PremiumOnly = false
+})
+
+PlayerMenuTab:AddButton({
+			Name = "Kill Player",
+			Callback = function()
+				for _,plr in pairs(P.who) do
+					if S.Players:FindFirstChild(plr) then
+						plr_kill2(S.Players[plr])
+					end
+				end
+			end,
+		})
+
+PlayerMenuTab:AddToggle({
+			Name = "Loop Kill Player",
+			CurrentValue = false,
+			Callback = function(Value)
+				loopkill = Value
+				while loopkill and task.wait() do
+					for _,plr in pairs(P.who) do
+						if S.Players:FindFirstChild(plr) then
+							plr_kill2(S.Players[plr])
+						end
+					end
+				end
+			end,
+		})
+
+
+PlayerMenuTab:AddButton({
+			Name = "Kill All Players",
+			Callback = function()
+				for _,plr in ipairs(S.Players:GetPlayers()) do
+					plr_kill2(plr)
+				end
+			end,
+		})
+
+PlayerMenuTab:AddDropdown({
+	Name = "Kill List",
+	CurrentOption = {},
+	MultipleOptions = true,
+	Options = getPlayerList(),
+	Default = function(Option)
+				P.who = {}
+				for i,v in pairs(Option) do
+					for i2,v2 in pairs(Lt.hui2) do
+						if v == v2 then table.insert(P.who, i2) end
+					end
+				end
+			end,
+		})
+
+PlayerMenuTab:AddDropdown({
+	Name = "White List",
+	CurrentOption = {},
+	MultipleOptions = true,
+	Options = getPlayerList(),
+	Default = function(Option)
+				P.whll = {"f"}
+				for i,v in pairs(Option) do
+					for i2,v2 in pairs(Lt.hui2) do
+						if v == v2 then table.insert(P.whll, i2) end
+					end
+				end
+			end,
+		})
 
 
 
@@ -4416,7 +4496,7 @@ function sendNotification64()
     if notificationSent64 then return end
     notificationSent64 = true
     local sound64 = Instance.new("Sound", game.SoundService)
-    sound64.SoundId = "rbxassetid://117527105076467"
+    sound64.SoundId = "rbxassetid://6807091537"
     sound64.Volume = 2
     sound64.Looped = false
     sound64:Play()
@@ -4430,7 +4510,7 @@ function sendNotification64()
     sound64.Ended:Connect(function()
         OrionLib:MakeNotification({
             Name = "Okay...",
-            Content = "Who's a good boy! Mommy saved You hehe with anti blobby milky",
+            Content = "19 Dollar Fortnite Card! Saved You hehe with anti blobby",
             Image = "rbxassetid://4483345998",
             Time = 5
         })
@@ -4930,6 +5010,9 @@ MiscTab:AddToggle({
         end
     end    
 })
+
+
+
 
 
 
