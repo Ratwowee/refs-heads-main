@@ -4416,7 +4416,7 @@ function sendNotification64()
     if notificationSent64 then return end
     notificationSent64 = true
     local sound64 = Instance.new("Sound", game.SoundService)
-    sound64.SoundId = "rbxassetid://6807091537"
+    sound64.SoundId = "rbxassetid://117527105076467"
     sound64.Volume = 2
     sound64.Looped = false
     sound64:Play()
@@ -4430,7 +4430,7 @@ function sendNotification64()
     sound64.Ended:Connect(function()
         OrionLib:MakeNotification({
             Name = "Okay...",
-            Content = "19 Dollar Fortnite Card! Saved You hehe with anti blobby",
+            Content = "Who's a good boy! Mommy saved You hehe with anti blobby milky",
             Image = "rbxassetid://4483345998",
             Time = 5
         })
