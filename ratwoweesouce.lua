@@ -2990,7 +2990,7 @@ end
 
 
 
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/BlizTBr/scripts/main/Orion%20X')))()
 OrionLib:MakeNotification({
 Name = "Wsp Niggers!",
 Content = "Wait for the script to load mafaka",
@@ -3004,7 +3004,7 @@ local Window = OrionLib:MakeWindow({
     SaveConfig = true,
     IntroEnabled = true,
     IntroText = "Gayass script by Ratwowee",
-    IntroIcon = "rbxassetid://7734058345", -- tu peux changer l'asset ID si tu veux un autre logo
+    IntroIcon = "rbxassetid://16602754611", -- tu peux changer l'asset ID si tu veux un autre logo
     ConfigFolder = "PWNLoader"
 })
 
